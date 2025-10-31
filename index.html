@@ -12,59 +12,87 @@
 <body class="bg-gray-50">
     <custom-navbar></custom-navbar>
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-r from-blue-900 to-purple-800 text-white py-48">
-<div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+<section class="relative bg-gradient-to-r from-blue-900 to-purple-800 text-white min-h-screen flex items-center">
+<div class="container mx-auto px-6 flex flex-col md:flex-row items-center py-20">
             <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">An Adoptive Home for Abandoned Neural Devices</h1>
-                <p class="text-xl mb-8">Give A Hand Tech, a 501(c)3 in the State of Ohio</p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#subscribe" class="bg-white text-blue-900 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold text-center transition duration-300">Contact</a>
-<a href="#services" class="border-2 border-white hover:bg-white hover:text-blue-900 px-6 py-3 rounded-lg font-semibold text-center transition duration-300">Our Services</a>
+                <h1 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">An Adoptive Home for Abandoned Neural Devices</h1>
+                <p class="text-2xl mb-10">Give A Hand Tech, a 501(c)3 in the State of Ohio</p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="#footer" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg text-center transition duration-300 transform hover:scale-105">Contact</a>
+                    <a href="#services" class="border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg text-center transition duration-300 transform hover:scale-105">Our Services</a>
+</div>
+            </div>
+            <div class="md:w-1/2 flex justify-center mt-10 md:mt-0">
+                <div class="w-full max-w-2xl">
+                    <img src="https://huggingface.co/spaces/crex3975/helping-hands-hub/resolve/main/images/IMG_8518.jpg" 
+                         alt="Helping Hand" 
+                         class="rounded-xl shadow-2xl border-4 border-white transform hover:scale-105 transition duration-500">
+</div>
+            </div>
                 </div>
             </div>
-            <div class="md:w-1/2">
-                <!-- Image removed as requested -->
-            </div>
-</div>
-        <div class="absolute bottom-0 left-0 right-0 h-16 bg-white"></div>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
+            <a href="#services" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+        </div>
     </section>
-    <!-- Our Mission -->
-    <section class="py-16 bg-white">
+<!-- Our Mission -->
+    <section id="mission" class="py-16 bg-gradient-to-b from-indigo-100 to-blue-100">
 <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-16 text-blue-800">Our Mission</h2>
-            <div class="max-w-3xl mx-auto text-center">
-                <p class="text-xl text-blue-900 mb-8">
+            <div class="max-w-3xl mx-auto text-center mb-8">
+                <p class="text-xl text-blue-800">
 Our mission is to enable people with disabilities to have full and continued access to advanced technology that can improve their independence and quality of life. Our focus is on maintaining access to beneficial active implantable devices that have been abandoned by the commercial market.
                 </p>
             </div>
+</div>
+    </section>
+    <!-- Our Services -->
+    <section id="services" class="py-16 bg-gradient-to-b from-blue-100 to-purple-100">
+<div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-blue-800">Our Services</h2>
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-xl text-blue-800">
+                    We're just getting off the ground, but we intend to offer a range of services to enable people with implanted devices to keep using them even after the devices have been abandoned by the commercial market.
+                </p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
+                <div class="md:w-1/2">
+                    <div class="w-full h-96 overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://huggingface.co/spaces/crex3975/helping-hands-hub/resolve/main/images/rs=w_2480,h_1240,cg_true.webp" 
+                             alt="Our Services" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="w-full h-96 overflow-hidden rounded-lg shadow-lg">
+                        <img src="https://huggingface.co/spaces/crex3975/helping-hands-hub/resolve/main/images/branded-stim-module.jpg" 
+                             alt="Service Details" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- Our Team -->
-    <section class="py-16 bg-gray-50">
+<!-- Our Team -->
+    <section id="team" class="py-16 bg-gradient-to-b from-purple-100 to-purple-100">
 <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-16 text-purple-800">Our Team</h2>
-            <div class="max-w-3xl mx-auto text-center">
-                <p class="text-xl text-purple-900">
+            <div class="max-w-3xl mx-auto text-center mb-8">
+                <p class="text-xl text-purple-800">
 We have decades of experience helping maintain implanted devices for people who benefit from them. If you'd like to be part of this team, let us know!
                 </p>
             </div>
-        </div>
+</div>
     </section>
-    <!-- Our Services -->
-    <section id="services" class="py-16 bg-white">
+<!-- Video Resources -->
+    <section class="py-12 bg-gradient-to-b from-purple-100 to-blue-100">
 <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-blue-700">Our Services</h2>
-            <div class="max-w-3xl mx-auto text-center">
-                <p class="text-xl text-blue-800 mb-8">
-We're just getting off the ground, but we intend to offer a range of services to enable people with implanted devices to keep using them even after the devices have been abandoned by the commercial market.
-                </p>
-            </div>
-        </div>
-    </section>
-    <!-- Video Resources -->
-    <section class="py-12 bg-gray-50">
-<div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800">Learn More About Us</h2>
+            <h2 class="text-3xl font-bold text-center mb-16 text-purple-800">Learn More About Us</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <div class="aspect-w-16 aspect-h-9">
@@ -105,17 +133,7 @@ We're just getting off the ground, but we intend to offer a range of services to
 </div>
         </div>
     </section>
-    <!-- Contact -->
-    <section id="subscribe" class="py-16 bg-gradient-to-br from-blue-800 to-blue-900 text-white">
-<div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
-            <p class="text-xl mb-10 max-w-2xl mx-auto text-blue-100">Send us a message for additional information or questions about the foundation.</p>
-            <div class="max-w-md mx-auto">
-                <a href="mailto:giveahand.tech" class="inline-block bg-blue-500 hover:bg-blue-400 px-8 py-4 rounded-lg font-semibold text-lg transition duration-300 shadow-lg">Email Us</a>
-            </div>
-        </div>
-    </section>
-<custom-footer></custom-footer>
-    <script src="script.js"></script>
+<custom-footer id="footer"></custom-footer>
+<script src="script.js"></script>
 </body>
 </html>
