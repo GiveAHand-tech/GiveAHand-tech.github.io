@@ -5,7 +5,7 @@ class CustomNavbar extends HTMLElement {
       <nav class="fixed w-full z-50 transition-all duration-300 bg-gradient-to-r from-blue-900 to-purple-800 text-white shadow-lg">
 <div class="container mx-auto px-6 py-4">
           <div class="flex justify-between items-center">
-            <a href="/" class="text-2xl font-bold">Give A Hand</a>
+            <a href="/" class="text-2xl font-bold">Give-A-Hand.Tech</a>
             <div class="hidden md:flex space-x-8">
               <a href="#mission" class="hover:text-blue-200 transition">Mission</a>
               <a href="#services" class="hover:text-blue-200 transition">Services</a>
