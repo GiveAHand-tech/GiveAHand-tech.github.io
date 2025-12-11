@@ -11,6 +11,7 @@ class CustomNavbar extends HTMLElement {
               <a href="#services" class="hover:text-blue-200 transition">Services</a>
               <a href="#team" class="hover:text-blue-200 transition">Team</a>
               <a href="#footer" class="hover:text-blue-200 transition">Contact</a>
+              <a href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-5866" class="hover:text-blue-200 transition">Donate</a>
             </div>
             <button class="md:hidden focus:outline-none">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
