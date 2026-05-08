@@ -1,140 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Give-A-Hand.Tech</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Give-A-Hand.tech — An adoptive home for abandoned neural devices</title>
+  <meta name="description" content="Give-A-Hand.tech is a 501(c)(3) nonprofit in Ohio enabling people with abandoned implantable medical devices to keep benefiting from them for the remainder of their lifetimes." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="components/navbar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+
+  <!-- React + Babel for the optional Tweaks panel -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
 </head>
-<body class="bg-gray-50">
-<!-- Navbar Section (from components/navbar.js) -->
-    <custom-navbar></custom-navbar>
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-blue-900 to-purple-800 text-white min-h-screen flex items-center">
-<div class="container mx-auto px-6 flex flex-col md:flex-row items-center py-20">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-5xl md:text-6xl font-bold mb-8 leading-tight">An Adoptive Home for Abandoned Neural Devices</h1>
-                <p class="text-2xl mb-10">Give-A-Hand.Tech, a 501(c)(3) in the State of Ohio</p>
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-5866" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg text-center transition duration-300 transform hover:scale-105">Donate</a>
-                    <a href="#services" class="border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg text-center transition duration-300 transform hover:scale-105">Our Services</a>
-</div>
-            </div>
-            <div class="md:w-1/2 flex justify-center mt-10 md:mt-0">
-                <div class="w-full max-w-2xl">
-                    <img src="https://huggingface.co/spaces/crex3975/helping-hands-hub/resolve/main/images/IMG_8518.jpg" 
-                         alt="Helping Hand" 
-                         class="rounded-xl shadow-2xl border-4 border-white transform hover:scale-105 transition duration-500">
-</div>
-            </div>
-                </div>
-            </div>
+<body>
+
+  <custom-navbar></custom-navbar>
+
+  <!-- Hero ------------------------------------------------- -->
+  <header class="hero">
+    <div class="shell">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow hero-eyebrow">501(c)(3) nonprofit · Ohio</div>
+          <h1 class="display">An adoptive home for <em>abandoned</em> neural devices.</h1>
+          <p class="hero-lede">
+            When manufacturers walk away from implantable medical devices, the people who depend on them are left without support. Give-A-Hand.tech exists so they can keep benefiting from these devices for the rest of their lives.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-5866">Donate</a>
+            <a class="btn btn-ghost" href="#cfp">Read the Call for Proposals</a>
+          </div>
         </div>
-        <div class="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
-            <a href="#services" class="text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
+
+        <div class="hero-side">
+          <img class="hero-photo" src="components/IMG_8518.jpg" alt="Hands holding a collection of abandoned implantable neural devices" />
+        </div>
+      </div>
+
+      <!-- Featured / lead video -->
+      <div class="feature-video" style="margin-top: clamp(40px, 6vw, 72px);">
+        <div class="feature-video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/jzzNJJisMP4?rel=0"
+            title="Give-A-Hand.tech — featured talk"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="feature-video-meta">
+          <div class="feature-video-meta-left">
+            <span class="label">Featured</span>
+            <span>Watch the latest from Give-A-Hand.tech</span>
+          </div>
+          <span class="duration">YouTube</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mission ---------------------------------------------- -->
+  <section id="mission" class="section">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="meta">01 — Mission</div>
+        </div>
+      </div>
+
+      <div class="mission-body">
+        <p class="mission-quote">
+          Give-A-Hand.tech&rsquo;s mission is to serve as an adoptive home for people with, or who could benefit from, <em>abandoned implantable medical devices.</em> GIVE-A-HAND.tech will enable people to gain access to, and keep benefitting from, these devices for the remainder of their lifetimes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -------------------------------------------- -->
+  <section id="services" class="section">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="meta">02 — Services</div>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-media">
+            <img src="https://huggingface.co/spaces/crex3975/helping-hands-hub/resolve/main/images/rs=w_2480,h_1240,cg_true.webp" alt="Service overview" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Patient support</span>
+            <h3>Hands-on continuity for active devices</h3>
+            <p>Programmer access, replacement components, and clinician coordination so existing implants keep doing their job.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-media">
+            <img src="https://huggingface.co/spaces/crex3975/helping-hands-hub/resolve/main/images/branded-stim-module.jpg" alt="Stimulation module" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Engineering</span>
+            <h3>Stewardship of technologies</h3>
+            <p>Documentation preserved as a public resource.</p>
+          </div>
+        </article>
+      </div>
+
+      
+          <div>
+          <p class="lede" style="margin-top: 20px;">
+          We're just getting off the ground, but we intend to offer a range of services to enable people with implanted devices to keep using them even after the devices have been abandoned by the commercial market.          </p>
+        </div>
+
+    </div>
+
+
+  </section>
+
+  <!-- Call for Proposals --------------------------------- -->
+  <section id="cfp" class="section">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="meta">03 — Call for Proposals</div>
+        </div>
+      </div>
+
+      <div class="cfp">
+        <div>
+          <div class="cfp-eyebrow">Call for Proposals &middot; 2026</div>
+          <p>GIVE-A-HAND.tech is pleased to announce the first ever “Abandoned Implant Technology Support Grants”, available to anyone in the neurodevice field.</p>
+          <div class="cfp-actions">
+            <a class="btn btn-primary" href="components/GAHt Application Guide - v4 5-05-2026.pdf" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+              Download PDF
             </a>
+            <a class="btn btn-ghost" href="mailto:proposals@give-a-hand.tech?subject=Proposal%20submission">Submit by email</a>
+          </div>
         </div>
-    </section>
-<!-- Our Mission -->
-    <section id="mission" class="py-16 bg-gradient-to-b from-indigo-100 to-blue-100">
-<div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-blue-800">Our Mission</h2>
-            <div class="max-w-3xl mx-auto text-center mb-8">
-                <p class="text-xl text-blue-800">
-                GIVE-A-HAND.tech’s mission is to serve as an adoptive home for people with, or who could benefit from, abandoned implantable medical devices. GIVE-A-HAND.tech will enable people to gain access to, and keep benefitting from, these devices for the remainder of their lifetimes.
-                </p>
+
+        <div class="cfp-doc">
+          <div class="cfp-key-dates">
+            <div class="cfp-key-row">
+              <span class="key">Status</span>
+              <span class="val">Active</span>
             </div>
-</div>
-    </section>
-    <!-- Our Services -->
-    <section id="services" class="py-16 bg-gradient-to-b from-blue-100 to-purple-100">
-<div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-blue-800">Our Services</h2>
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <p class="text-xl text-blue-800">
-                    We're just getting off the ground, but we intend to offer a range of services to enable people with implanted devices to keep using them even after the devices have been abandoned by the commercial market.
-                </p>
+            <div class="cfp-key-row">
+              <span class="key">Audience</span>
+              <span class="val">Researchers · Clinicians · Engineers</span>
             </div>
-            <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
-                <div class="md:w-1/2">
-                    <div class="w-full h-96 overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://huggingface.co/spaces/crex3975/helping-hands-hub/resolve/main/images/rs=w_2480,h_1240,cg_true.webp" 
-                             alt="Our Services" 
-                             class="w-full h-full object-cover">
-                    </div>
-                </div>
-                <div class="md:w-1/2">
-                    <div class="w-full h-96 overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://huggingface.co/spaces/crex3975/helping-hands-hub/resolve/main/images/branded-stim-module.jpg" 
-                             alt="Service Details" 
-                             class="w-full h-full object-cover">
-                    </div>
-                </div>
+            <div class="cfp-key-row">
+              <span class="key">Submit to</span>
+              <span class="val">proposals@give-a-hand.tech</span>
             </div>
+          </div>
         </div>
-    </section>
-<!-- Our Team -->
-    <section id="team" class="py-16 bg-gradient-to-b from-purple-100 to-purple-100">
-<div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-purple-800">Our Team</h2>
-            <div class="max-w-3xl mx-auto text-center mb-8">
-                <p class="text-xl text-purple-800">
-We have decades of experience helping maintain implanted devices for people who benefit from them. If you'd like to be part of this team, let us know!
-                </p>
-            </div>
-</div>
-    </section>
-<!-- Video Resources -->
-    <section class="py-12 bg-gradient-to-b from-purple-100 to-blue-100">
-<div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16 text-purple-800">Learn More About Us</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <iframe src="https://player.vimeo.com/video/933885430?h=73688627a9" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Introducing GIVE-A-HAND.tech</h3>
-                        <p class="text-gray-600">What is our mission and what are we going to be doing?</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <iframe src="https://player.vimeo.com/video/933881667?h=0a152fe254" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">What's in a Name?</h3>
-                        <p class="text-gray-600">Why did we choose the name "GIVE-A-HAND.tech"?</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <iframe src="https://player.vimeo.com/video/933881781?h=cb31bd053d" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Failed Solutions</h3>
-                        <p class="text-gray-600">Abandoned medical devices - what can be done about it? Apparently no one knows!</p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-xl shadow-md overflow-hidden">
-                    <div class="aspect-w-16 aspect-h-9">
-                        <iframe src="https://player.vimeo.com/video/1048031828?h=ae1b83ade5" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">A Proposed Solution</h3>
-                        <p class="text-gray-600">A plan for proactive support for people with abandoned implantable devices.</p>
-                    </div>
-                </div>
-</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video library ------------------------------------- -->
+  <section id="videos" class="section">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="meta">04 — Library</div>
         </div>
-    </section>
-<custom-footer id="footer"></custom-footer>
-<script src="script.js"></script>
+        <div>
+          <p class="lede" style="margin-top: 20px;">
+            Short talks on what we&rsquo;re doing, why the name, why current solutions fail, and the path forward.
+          </p>
+        </div>
+      </div>
+
+      <div class="video-grid">
+        <article class="video-card">
+          <div class="frame">
+            <iframe src="https://player.vimeo.com/video/933885430?h=73688627a9" title="Introducing GIVE-A-HAND.tech" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-card-meta">
+            <span class="video-card-num">/01</span>
+            <div>
+              <h3>Introducing GIVE-A-HAND.tech</h3>
+              <p>What is our mission and what are we going to be doing?</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="frame">
+            <iframe src="https://player.vimeo.com/video/933881667?h=0a152fe254" title="What's in a Name?" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-card-meta">
+            <span class="video-card-num">/02</span>
+            <div>
+              <h3>What&rsquo;s in a Name?</h3>
+              <p>Why did we choose the name &ldquo;GIVE-A-HAND.tech&rdquo;?</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="frame">
+            <iframe src="https://player.vimeo.com/video/933881781?h=cb31bd053d" title="Failed Solutions" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-card-meta">
+            <span class="video-card-num">/03</span>
+            <div>
+              <h3>Failed Solutions</h3>
+              <p>Abandoned medical devices — what can be done about it? Apparently no one knows.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <div class="frame">
+            <iframe src="https://player.vimeo.com/video/1048031828?h=ae1b83ade5" title="A Proposed Solution" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-card-meta">
+            <span class="video-card-num">/04</span>
+            <div>
+              <h3>A Proposed Solution</h3>
+              <p>A plan for proactive support for people with abandoned implantable devices.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team ----------------------------------------------- -->
+  <section id="team" class="section">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <div class="meta">05 — Team</div>
+        </div>
+      </div>
+
+      <div class="mission-grid">
+        <p class="team-quote">
+          We have decades of experience helping maintain implanted devices for the people who benefit from them. <em>If you&rsquo;d like to be part of this team, let us know.</em>
+        </p>
+        <div>
+          <a class="team-cta" href="mailto:support@give-a-hand.tech">Get in touch →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <custom-footer></custom-footer>
+
+  <!-- Tweaks ---------------------------------------------- -->
+  <script type="text/babel" data-presets="env,react">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "accent": "cobalt",
+      "displayFont": "instrument",
+      "density": "default"
+    }/*EDITMODE-END*/;
+
+    const ACCENTS = {
+      cobalt: { '--accent': 'oklch(46% 0.18 252)', '--accent-ink': 'oklch(34% 0.16 252)', '--accent-tint': 'oklch(96% 0.03 252)' },
+      teal:   { '--accent': 'oklch(52% 0.13 200)', '--accent-ink': 'oklch(40% 0.13 200)', '--accent-tint': 'oklch(96% 0.03 200)' },
+      forest: { '--accent': 'oklch(46% 0.12 155)', '--accent-ink': 'oklch(34% 0.12 155)', '--accent-tint': 'oklch(96% 0.03 155)' },
+      clay:   { '--accent': 'oklch(58% 0.14 45)',  '--accent-ink': 'oklch(46% 0.14 45)',  '--accent-tint': 'oklch(96% 0.03 45)'  }
+    };
+
+    const DISPLAY_FONTS = {
+      instrument: '"Instrument Serif", Georgia, serif',
+      sohne:      '"Söhne", "Helvetica Neue", Helvetica, sans-serif',
+      mono:       '"JetBrains Mono", ui-monospace, monospace'
+    };
+
+    function applyTweaks(t) {
+      const root = document.documentElement;
+      const a = ACCENTS[t.accent] || ACCENTS.cobalt;
+      Object.entries(a).forEach(([k, v]) => root.style.setProperty(k, v));
+      root.style.setProperty('--display', DISPLAY_FONTS[t.displayFont] || DISPLAY_FONTS.instrument);
+      document.body.dataset.density = t.density;
+    }
+
+    function App() {
+      if (!window.useTweaks) return null;
+      const { tweaks, setTweak } = window.useTweaks(TWEAK_DEFAULTS);
+      React.useEffect(() => applyTweaks(tweaks), [tweaks]);
+
+      const { TweaksPanel, TweakSection, TweakColor, TweakRadio, TweakSelect } = window;
+      if (!TweaksPanel) return null;
+
+      return (
+        <TweaksPanel title="Tweaks">
+          <TweakSection title="Accent">
+            <TweakColor
+              label="Accent color"
+              value={tweaks.accent}
+              onChange={(v) => setTweak('accent', v)}
+              options={[
+                { value: 'cobalt', color: '#1F46B0' },
+                { value: 'teal',   color: '#0E8A8A' },
+                { value: 'forest', color: '#2A7849' },
+                { value: 'clay',   color: '#B25A2C' }
+              ]}
+            />
+          </TweakSection>
+          <TweakSection title="Type">
+            <TweakRadio
+              label="Display"
+              value={tweaks.displayFont}
+              onChange={(v) => setTweak('displayFont', v)}
+              options={[
+                { value: 'instrument', label: 'Serif' },
+                { value: 'sohne',      label: 'Sans' },
+                { value: 'mono',       label: 'Mono' }
+              ]}
+            />
+          </TweakSection>
+          <TweakSection title="Density">
+            <TweakRadio
+              label="Spacing"
+              value={tweaks.density}
+              onChange={(v) => setTweak('density', v)}
+              options={[
+                { value: 'compact', label: 'Compact' },
+                { value: 'default', label: 'Default' },
+                { value: 'airy',    label: 'Airy' }
+              ]}
+            />
+          </TweakSection>
+        </TweaksPanel>
+      );
+    }
+
+    // Apply defaults immediately, even before the panel mounts.
+    applyTweaks(TWEAK_DEFAULTS);
+
+    function tryMount() {
+      if (!window.useTweaks || !window.TweaksPanel) {
+        setTimeout(tryMount, 80); return;
+      }
+      const root = document.createElement('div');
+      document.body.appendChild(root);
+      ReactDOM.createRoot(root).render(<App />);
+    }
+    tryMount();
+  </script>
+
+  <script>
+    // Reveal-on-scroll
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      }
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.section, .hero').forEach((el) => {
+      el.classList.add('reveal');
+      io.observe(el);
+    });
+  </script>
+
 </body>
 </html>
